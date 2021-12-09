@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurableFunctions", "DurableFunctions\DurableFunctions.csproj", "{1588022E-D213-4015-B985-D9875198A42F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DurableFunctions", "DurableFunctions\DurableFunctions.csproj", "{1588022E-D213-4015-B985-D9875198A42F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR", "MediatR\MediatR.csproj", "{CAED26B6-EC74-4881-AFE8-01491A780E23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1588022E-D213-4015-B985-D9875198A42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1588022E-D213-4015-B985-D9875198A42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1588022E-D213-4015-B985-D9875198A42F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAED26B6-EC74-4881-AFE8-01491A780E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAED26B6-EC74-4881-AFE8-01491A780E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAED26B6-EC74-4881-AFE8-01491A780E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAED26B6-EC74-4881-AFE8-01491A780E23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
