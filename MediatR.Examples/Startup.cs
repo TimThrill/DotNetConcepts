@@ -1,3 +1,4 @@
+using MediatR.Examples.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MediatR
+namespace MediatR.Examples
 {
     public class Startup
     {
@@ -26,6 +27,9 @@ namespace MediatR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Inject MediatR
+            services.AddMediatR(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

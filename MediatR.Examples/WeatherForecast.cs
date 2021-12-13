@@ -1,6 +1,6 @@
 using System;
 
-namespace MediatR
+namespace MediatR.Examples
 {
     public class WeatherForecast
     {
