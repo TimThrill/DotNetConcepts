@@ -29,7 +29,7 @@ namespace DurableFunctions
             var instanceId = Guid.NewGuid();
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
-            var isTimeout = await starter.StartNewAsync(nameof(Orchestrator.RetryOrchestrator), instanceId.ToString(), new RetrySetting { TimeoutInSeconds = intTimeoutInSeconds, RetryIntervalInSeconds = intRetryIntervalInSeconds });
+            var isTimeout = await starter.StartNewAsync(nameof(Orchestrator.WhileLoopOrchestrator), instanceId.ToString(), new RetrySetting { TimeoutInSeconds = intTimeoutInSeconds, RetryIntervalInSeconds = intRetryIntervalInSeconds });
 
             return new OkObjectResult(new
             {

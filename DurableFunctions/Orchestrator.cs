@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -9,6 +10,25 @@ namespace DurableFunctions
 {
     public static class Orchestrator
     {
+        [FunctionName(nameof(WhileLoopOrchestrator))]
+        public static async Task WhileLoopOrchestrator(
+            [OrchestrationTrigger] IDurableOrchestrationContext context, ILogger logger)
+        {
+            logger = context.CreateReplaySafeLogger(logger);
+            var timeout = context.CurrentUtcDateTime.AddSeconds(30);
+
+            while(context.CurrentUtcDateTime < timeout)
+            {
+                var dueTime = context.CurrentUtcDateTime.AddSeconds(10);
+
+                await context.CreateTimer(dueTime, CancellationToken.None);
+
+                logger.LogInformation("I'm running");
+            }
+
+            logger.LogInformation("I'm completed");
+        }
+
         [FunctionName(nameof(RetryOrchestrator))]
         public static async Task RetryOrchestrator(
         [OrchestrationTrigger] IDurableOrchestrationContext context)
